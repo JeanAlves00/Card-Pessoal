@@ -17,7 +17,7 @@ const App = () => (
       name="Jean Pablo Alves Gonçalves"
       description="Apenas mais um maluco no mundo"
       location="Rolim De Moura, RO, Brasil"
-      aboutMe="Apenas mais um cara, tentando se encontrar na vida, gosto de jogar, assistir filmes, series e animes, e claro, vivar a vida numa boa."
+      aboutMe="Apenas mais um cara, tentando se encontrar na vida, gosto de jogar, assistir filmes, series e animes, e claro, viver a vida numa boa."
       pcSpecs={{
         cpu: "AMD Ryzen 5 4600g",
         ram: "16GB DDR4 3200MHz",
