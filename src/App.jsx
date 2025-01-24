@@ -13,21 +13,21 @@ const Container = styled.div`
 const App = () => (
   <Container>
     <ProfileCard
-      image="https://avatars.githubusercontent.com/u/1"
+      image="https://avatars.githubusercontent.com/u/154983968?v=4"
       name="Jean Pablo Alves Gonçalves"
       description="Apenas mais um maluco no mundo"
       location="Rolim De Moura, RO, Brasil"
       aboutMe="Apenas mais um cara, tentando se encontrar na vida, gosto de jogar, assistir filmes, series e animes, e claro, vivar a vida numa boa."
       pcSpecs={{
         cpu: "AMD Ryzen 5 4600g",
-        ram: "16GB DDR4 3600MHz",
+        ram: "16GB DDR4 3200MHz",
         gpu: "AMD Radeon RX 7600"
       }}
       social={{
-        facebook: "https://facebook.com/johndoe",
-        twitch: "https://twitch.tv/johndoe",
-        youtube: "https://youtube.com/@johndoe",
-        instagram: "https://instagram.com/johndoe"
+        facebook: "https://www.facebook.com/profile.php?id=100054401314446",
+        twitch: "https://www.twitch.tv/S01lis",
+        youtube: "https://www.youtube.com/@jeanalves7715",
+        instagram: "https://www.instagram.com/jeanalves411/"
       }}
     />
   </Container>
