@@ -17,9 +17,7 @@ const App = () => (
       name="Jean Pablo Alves Gonçalves"
       description="Apenas mais um maluco no mundo"
       location="Rolim De Moura, RO, Brasil"
-      aboutMe="apenas mais um maluco no mundo, tentando desvendar os misterios da vida (spoiler: Não achei detonado sobre). Gosto santificar o mundo salvando
-      cidadoes inocentes no mundo dos games ou, claro, os destruindo, maratonar filmes e series e jogar ESO como se fosse um clt (quem me dera fosse pago por isso),
-      é claro, tentar viver a vida no modo easy...  ou pelo menos tentar, porque o chefão final é sempre o boleto no fim do mês.😅"
+      aboutMe="Nada a declarar (so falo sobre presença do meu adivogado)"
       pcSpecs={{
         cpu: "AMD Ryzen 5 4600g",
         ram: "16GB DDR4 3200MHz",
