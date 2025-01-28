@@ -17,7 +17,7 @@ const App = () => (
       name="Jean Pablo Alves Gonçalves"
       description="Apenas mais um maluco no mundo"
       location="Rolim De Moura, RO, Brasil"
-      aboutMe="Nada a declarar (so falo sobre presença do meu adivogado)"
+      aboutMe="Nada a declarar ( Só falo na presença do meu advogado )."
       pcSpecs={{
         cpu: "AMD Ryzen 5 4600g",
         ram: "16GB DDR4 3200MHz",
@@ -27,7 +27,10 @@ const App = () => (
         facebook: "https://www.facebook.com/profile.php?id=100054401314446",
         twitch: "https://www.twitch.tv/S01lis",
         youtube: "https://www.youtube.com/@jeanalves7715",
-        instagram: "https://www.instagram.com/jeanalves411/"
+        instagram: "https://www.instagram.com/jeanalves411/",
+        steam: "https://steamcommunity.com/profiles/76561199271439295/",
+        xbox: "https://account.xbox.com/pt-br/profile?gamertag=Jean Alves#1603",
+        epic: "https://store.epicgames.com/u/210a011e8ca24753a6beb3b473b19772"
       }}
     />
   </Container>

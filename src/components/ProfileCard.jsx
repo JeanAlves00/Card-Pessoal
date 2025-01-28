@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { FaTwitch, FaYoutube, FaInstagram, FaDesktop, FaMemory, FaMicrochip, FaFacebook } from 'react-icons/fa';
+import { FaFacebook, FaTwitch, FaYoutube, FaInstagram, FaSteam, FaXbox, FaMicrochip, FaMemory, FaDesktop, FaGamepad } from 'react-icons/fa';
 
 const Card = styled.div`
   width: 400px;
@@ -62,17 +63,29 @@ const SocialLinks = styled.div`
 
 const SocialIcon = styled.a`
   color: rgba(255, 255, 255, 0.8);
-  font-size: 24px;
+  font-size: 25px; 
   transition: all 0.3s;
   padding: 10px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
+  position: relative;
 
   &:hover {
     color: ${props => props.hoverColor || '#42d3ff'};
     transform: translateY(-3px) scale(1.1);
     box-shadow: 0 0 15px ${props => props.hoverColor || '#42d3ff'};
     background: rgba(255, 255, 255, 0.2);
+  }
+
+  &:hover::after {
+    content: '${props => props.label}';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 0.8em;
+    white-space: nowrap;
   }
 `;
 
@@ -123,54 +136,122 @@ const ProfileCard = ({
   aboutMe,
   pcSpecs,
   social 
-}) => (
-  <Card>
-    <ProfileImage src={image} alt={`${name}'s profile`} />
-    <Name>{name}</Name>
-    <Description>{description}</Description>
-    <Location>📍 {location}</Location>
+}) => {
+  const [setHoveredIcon] = useState(null);
 
-    <Section>
-      <SectionTitle>Sobre mim</SectionTitle>
-      <AboutMe>{aboutMe}</AboutMe>
-    </Section>
+  return (
+    <Card>
+      <ProfileImage src={image} alt={`${name}'s profile`} />
+      <Name>{name}</Name>
+      <Description>{description}</Description>
+      <Location>📍 {location}</Location>
 
-    <Section>
-      <SectionTitle>Setup Specs</SectionTitle>
-      <SpecList>
-        <SpecItem><FaMicrochip /> CPU: {pcSpecs.cpu}</SpecItem>
-        <SpecItem><FaMemory /> RAM: {pcSpecs.ram}</SpecItem>
-        <SpecItem><FaDesktop /> GPU: {pcSpecs.gpu}</SpecItem>
-      </SpecList>
-    </Section>
+      <Section>
+        <SectionTitle>Sobre mim</SectionTitle>
+        <AboutMe>{aboutMe}</AboutMe>
+      </Section>
 
-    <Section>
-      <SectionTitle>Onde me encontrar</SectionTitle>
-      <SocialLinks>
-        {social?.facebook && (
-          <SocialIcon href={social.facebook} target="_blank" hoverColor="#1877f2">
-            <FaFacebook />
-          </SocialIcon>
-        )}
-        {social?.twitch && (
-          <SocialIcon href={social.twitch} target="_blank" hoverColor="#6441a5">
-            <FaTwitch />
-          </SocialIcon>
-        )}
-        {social?.youtube && (
-          <SocialIcon href={social.youtube} target="_blank" hoverColor="#ff0000">
-            <FaYoutube />
-          </SocialIcon>
-        )}
-        {social?.instagram && (
-          <SocialIcon href={social.instagram} target="_blank" hoverColor="#e1306c">
-            <FaInstagram />
-          </SocialIcon>
-        )}
-      </SocialLinks>
-    </Section>
-  </Card>
-);
+      <Section>
+        <SectionTitle>Setup Specs</SectionTitle>
+        <SpecList>
+          <SpecItem><FaMicrochip /> CPU: {pcSpecs.cpu}</SpecItem>
+          <SpecItem><FaMemory /> RAM: {pcSpecs.ram}</SpecItem>
+          <SpecItem><FaDesktop /> GPU: {pcSpecs.gpu}</SpecItem>
+        </SpecList>
+      </Section>
+
+      <Section>
+        <SectionTitle>Onde me encontrar</SectionTitle>
+        <SocialLinks>
+          {social?.facebook && (
+            <SocialIcon 
+              href={social.facebook} 
+              target="_blank" 
+              hoverColor="#1877f2" 
+              label="Facebook"
+              onMouseEnter={() => setHoveredIcon('Facebook')}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              <FaFacebook />
+            </SocialIcon>
+          )}
+          {social?.twitch && (
+            <SocialIcon 
+              href={social.twitch} 
+              target="_blank" 
+              hoverColor="#6441a5" 
+              label="Twitch"
+              onMouseEnter={() => setHoveredIcon('Twitch')}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              <FaTwitch />
+            </SocialIcon>
+          )}
+          {social?.youtube && (
+            <SocialIcon 
+              href={social.youtube} 
+              target="_blank" 
+              hoverColor="#ff0000" 
+              label="YouTube"
+              onMouseEnter={() => setHoveredIcon('YouTube')}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              <FaYoutube />
+            </SocialIcon>
+          )}
+          {social?.instagram && (
+            <SocialIcon 
+              href={social.instagram} 
+              target="_blank" 
+              hoverColor="#e1306c" 
+              label="Instagram"
+              onMouseEnter={() => setHoveredIcon('Instagram')}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              <FaInstagram />
+            </SocialIcon>
+          )}
+          {social?.steam && (
+            <SocialIcon 
+              href={social.steam} 
+              target="_blank" 
+              hoverColor="#1b2838" 
+              label="Steam"
+              onMouseEnter={() => setHoveredIcon('Steam')}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              <FaSteam />
+            </SocialIcon>
+          )}
+          {social?.xbox && (
+            <SocialIcon 
+              href={social.xbox} 
+              target="_blank" 
+              hoverColor="#107c10" 
+              label="Xbox"
+              onMouseEnter={() => setHoveredIcon('Xbox')}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              <FaXbox />
+            </SocialIcon>
+          )}
+          {social?.epic && (
+            <SocialIcon 
+              href={social.epic} 
+              target="_blank" 
+              hoverColor="#313131" 
+              label="Epic Games"
+              onMouseEnter={() => setHoveredIcon('Epic Games')}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              <FaGamepad />
+            </SocialIcon>
+          )}
+        </SocialLinks>
+      </Section>
+    </Card>
+  );
+};
 
 ProfileCard.propTypes = {
   image: PropTypes.string.isRequired,
@@ -188,6 +269,9 @@ ProfileCard.propTypes = {
     twitch: PropTypes.string,
     youtube: PropTypes.string,
     instagram: PropTypes.string,
+    steam: PropTypes.string,
+    xbox: PropTypes.string,
+    epic: PropTypes.string,
   }),
 };
 
